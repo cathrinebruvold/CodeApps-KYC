@@ -1,0 +1,138 @@
+/* Shared input styles */
+
+.input-text {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color var(--transition);
+}
+
+.input-text:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px var(--color-primary-lighter);
+}
+
+.input-text::placeholder {
+  color: var(--color-text-light);
+}
+
+/* Yes/No toggle */
+.input-yesno {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.input-yesno-btn {
+  flex: 1;
+  max-width: 120px;
+  padding: var(--space-sm) var(--space-lg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+}
+
+.input-yesno-btn:hover {
+  border-color: var(--color-primary-light);
+}
+
+.input-yesno-btn--yes.input-yesno-btn--selected {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.input-yesno-btn--no.input-yesno-btn--selected {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+}
+
+/* Dropdown */
+.input-dropdown {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237f8c8d' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-md) center;
+  padding-right: var(--space-2xl);
+  transition: border-color var(--transition);
+}
+
+.input-dropdown:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px var(--color-primary-lighter);
+}
+
+/* Multiselect checkboxes */
+.input-multiselect {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.input-multiselect-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.input-multiselect-option:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-primary-light);
+}
+
+.input-multiselect-option:has(.input-multiselect-checkbox:checked) {
+  background-color: var(--color-primary-lighter);
+  border-color: var(--color-primary-light);
+}
+
+.input-multiselect-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.input-multiselect-label {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+/* Date input */
+.input-date {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  max-width: 250px;
+  transition: border-color var(--transition);
+}
+
+.input-date:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px var(--color-primary-lighter);
+}

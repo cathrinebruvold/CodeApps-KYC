@@ -1,0 +1,100 @@
+.admin-category-editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  flex: 1;
+}
+
+.admin-category-editor-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: flex-end;
+}
+
+.admin-category-editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+  min-width: 160px;
+}
+
+.admin-category-editor-field--icon {
+  flex: 0 0 100px;
+  min-width: 80px;
+}
+
+.admin-category-editor-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.admin-category-editor-input {
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  transition: border-color var(--transition);
+}
+
+.admin-category-editor-input:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 2px var(--color-primary-lighter);
+}
+
+.admin-category-editor-input--icon {
+  text-align: center;
+  font-weight: 600;
+}
+
+.admin-category-editor-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-end;
+}
+
+.admin-category-editor-btn {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.admin-category-editor-btn--cancel {
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.admin-category-editor-btn--cancel:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.admin-category-editor-btn--save {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.admin-category-editor-btn--save:hover {
+  background-color: var(--color-primary-dark);
+}
+
+@media (max-width: 480px) {
+  .admin-category-editor-fields {
+    flex-direction: column;
+  }
+
+  .admin-category-editor-field--icon {
+    flex: 1;
+  }
+}

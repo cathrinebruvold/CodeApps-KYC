@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useQuestionnaire } from "@/context/QuestionnaireContext.tsx";
+import { useAdmin } from "@/context/AdminContext.tsx";
+import { Layout } from "@/components/Layout/Layout.tsx";
+import { StepConfiguration } from "@/components/StepConfiguration/StepConfiguration.tsx";
+import { StepCategory } from "@/components/StepCategory/StepCategory.tsx";
+import { StepSummary } from "@/components/StepSummary/StepSummary.tsx";
+import { AdminPage } from "@/components/AdminPage/AdminPage.tsx";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { state: adminState, steps } = useAdmin();
+  const { state } = useQuestionnaire();
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  if (adminState.isAdminMode) {
+    return <AdminPage />;
+  }
+
+  const currentStepDef = steps[state.currentStep];
+
+  const renderStep = () => {
+    if (state.isSubmitted) {
+      return <StepSummary />;
+    }
+
+    switch (currentStepDef.type) {
+      case "configuration":
+        return <StepConfiguration />;
+      case "category":
+        return <StepCategory categoryId={currentStepDef.categoryId!} />;
+      case "summary":
+        return <StepSummary />;
+    }
+  };
+
+  return <Layout>{renderStep()}</Layout>;
 }
 
-export default App
+export default App;

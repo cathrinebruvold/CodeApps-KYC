@@ -1,0 +1,121 @@
+.step-configuration {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.step-header {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.step-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.step-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+.config-section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.config-section-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.option-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.option-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.option-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.option-card:hover {
+  border-color: var(--color-primary-light);
+  background-color: var(--color-surface-hover);
+}
+
+.option-card--selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-lighter);
+}
+
+.option-card--selected:hover {
+  background-color: var(--color-primary-lighter);
+}
+
+/* Risk level color variants when selected */
+.option-card--low.option-card--selected {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-light);
+}
+
+.option-card--medium.option-card--selected {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning-light);
+}
+
+.option-card--high.option-card--selected {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger-light);
+}
+
+.option-card--critical.option-card--selected {
+  border-color: var(--color-critical);
+  background-color: var(--color-critical-light);
+}
+
+.option-card-label {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .option-grid--3,
+  .option-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .option-grid--2,
+  .option-grid--3,
+  .option-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}

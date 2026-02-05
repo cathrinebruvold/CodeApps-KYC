@@ -1,0 +1,131 @@
+.admin-filter-bar {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.admin-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.admin-filter-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.admin-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  background-color: var(--color-surface);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.admin-filter-chip:hover {
+  border-color: var(--color-primary-light);
+  background-color: var(--color-surface-hover);
+}
+
+/* Active state base */
+.admin-filter-chip--active {
+  color: white;
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.admin-filter-chip--active:hover {
+  opacity: 0.9;
+}
+
+/* Risk level color variants */
+.admin-filter-chip--low.admin-filter-chip--active {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+}
+
+.admin-filter-chip--medium.admin-filter-chip--active {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning);
+  color: var(--color-text);
+}
+
+.admin-filter-chip--high.admin-filter-chip--active {
+  border-color: var(--color-danger);
+  background-color: var(--color-danger);
+}
+
+.admin-filter-chip--critical.admin-filter-chip--active {
+  border-color: var(--color-critical);
+  background-color: var(--color-critical);
+}
+
+.admin-filter-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.admin-filter-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.admin-filter-reset-btn {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  background: none;
+  border: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.admin-filter-reset-btn:hover {
+  background-color: var(--color-primary-lighter);
+  color: var(--color-primary);
+}
+
+.admin-filter-reset-btn:disabled {
+  color: var(--color-text-light);
+  cursor: default;
+}
+
+.admin-filter-reset-btn:disabled:hover {
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .admin-filter-bar {
+    padding: var(--space-lg);
+  }
+
+  .admin-filter-footer {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
+}
