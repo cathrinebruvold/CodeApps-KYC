@@ -4,7 +4,7 @@ A Power Apps Code App built with React + TypeScript + Vite for managing Know You
 
 ## Overview
 
-This is a comprehensive KYC (Know Your Customer) application designed for compliance and risk assessment. It provides an interactive questionnaire system that adapts based on user configuration, featuring multi-language support, dynamic form validation, and comprehensive data management.
+This is a KYC (Know Your Customer) application designed for compliance and risk assessment. It provides an interactive questionnaire system that adapts based on user configuration, featuring multi-language support, dynamic form validation, and comprehensive data management.
 
 ## Features
 
@@ -17,15 +17,6 @@ This is a comprehensive KYC (Know Your Customer) application designed for compli
 - **Local Storage**: Persistent data storage for questionnaire progress
 - **Summary Review**: Comprehensive summary view with bullet-pointed multiselect answers
 
-## KYC Categories
-
-The application covers five main KYC compliance categories:
-
-1. **Kundelitikk (KYC)** - Customer Due Diligence
-2. **Transaksjonsovervåking** - Transaction Monitoring
-3. **Risikovurdering** - Risk Assessment
-4. **Politisk eksponerte personer (PEP)** - Politically Exposed Persons
-5. **Sanksjoner** - Sanctions Screening
 
 ## Technology Stack
 
@@ -123,13 +114,6 @@ Language strings are stored in:
 - `src/i18n/en.ts` - English
 - `src/i18n/nb.ts` - Norwegian
 
-## Contributing
-
-This is a private project. For contributions, please contact the development team.
-
-## License
-
-Proprietary - All rights reserved
 
 ---
 
